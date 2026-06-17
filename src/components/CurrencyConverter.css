@@ -1,0 +1,76 @@
+.currency-converter {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rates-display {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rate-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.currency-label {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rate-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFA500;
+}
+
+.btn-refresh,
+.btn-refresh-small {
+  background: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background: #FF8C00;
+  transform: scale(1.05);
+}
+
+.btn-refresh:disabled,
+.btn-refresh-small:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-refresh-small {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .rates-display {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rate-item {
+    width: 100%;
+  }
+}
