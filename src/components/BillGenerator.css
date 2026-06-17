@@ -1,0 +1,280 @@
+.bill-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.bill-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #FFA500;
+}
+
+.bill-header h2 {
+  font-size: 1.8rem;
+  color: #FFA500;
+  margin: 0;
+}
+
+.btn-close {
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+  background: #FF5252;
+}
+
+.bill-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bill-section h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.bill-datetime {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 4px 0;
+}
+
+.bill-id {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.bill-items {
+  margin-bottom: 24px;
+}
+
+.bill-items h4 {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.items-table th {
+  background: #FFF3E0;
+  color: #333;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #FFD99F;
+  font-weight: 600;
+}
+
+.items-table td {
+  padding: 8px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.items-table tr:last-child td {
+  border-bottom: 2px solid #FFA500;
+}
+
+.bill-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.total-section {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #FFA500;
+}
+
+.total-section h4 {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFA500;
+  margin: 0;
+  word-break: break-word;
+}
+
+.bill-rates {
+  background: #F5F5F5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.bill-rates h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.bill-rates p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.bill-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: #FFA500;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #FF8C00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.btn-secondary {
+  background: #E0E0E0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #D0D0D0;
+}
+
+.btn-success {
+  background: #4CAF50;
+  color: white;
+}
+
+@media print {
+  .bill-modal {
+    background: white;
+    position: static;
+  }
+
+  .bill-content {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .bill-actions,
+  .btn-close {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .bill-content {
+    padding: 16px;
+  }
+
+  .bill-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bill-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .items-table {
+    font-size: 0.8rem;
+  }
+
+  .items-table th,
+  .items-table td {
+    padding: 6px;
+  }
+
+  .bill-totals {
+    grid-template-columns: 1fr;
+  }
+
+  .amount {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
