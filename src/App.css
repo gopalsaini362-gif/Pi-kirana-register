@@ -1,0 +1,136 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.app-header {
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  color: white;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.tabs-navigation {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #F5F5F5;
+  border-bottom: 2px solid #E0E0E0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: none;
+  background: white;
+  color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.tab-button:hover {
+  background: #FFE0B2;
+  color: #333;
+}
+
+.tab-button.active {
+  background: #FFA500;
+  color: white;
+  border-color: #FF8C00;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.tab-content {
+  padding: 20px;
+  min-height: 500px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .app-header {
+    padding: 16px;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tabs-navigation {
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .tab-button {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .tab-button span {
+    display: none;
+  }
+
+  .tab-content {
+    padding: 16px;
+    min-height: 400px;
+  }
+}
